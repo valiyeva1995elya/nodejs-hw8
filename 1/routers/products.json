@@ -1,1 +1,1 @@
-[{"id":1,"name":"T-shirt","categoryId":"clothes"},{"id":2,"name":"shirt","categoryId":"clothes"},{"id":3,"name":"water","categoryId":"products"},{"id":4,"name":"juice","categoryId":"products"}]
+[{"id":1,"name":"T-shirt","price":"500","categoryId":"clothes"},{"id":2,"name":"shirt","price":"2000","categoryId":"clothes"},{"id":3,"name":"water","price":"200","categoryId":"products"},{"id":4,"name":"juice","price":"400","categoryId":"products"}]

@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .categories_products_block{
+            display: flex;
+        }
+    </style>
 </head>
 <body>
     <input type="text" id="new_categories_name" placeholder="New categories name">
@@ -15,7 +20,11 @@
     
     <hr>
     <input type="text" id="new_products_name" placeholder="New products name"><br>
-    <input type="text" id="new_products_category" placeholder="New products category">
+    <input type="number" id="new_products_price" placeholder="price"><br>
+    <div class="categories_products_block">
+
+    </div>
+
     <button id="create_products_btn">Add products</button>
     <div class="products_block">
 

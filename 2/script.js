@@ -1,4 +1,5 @@
 const categoriesBlock = document.querySelector(".categories_block");
+const productsBlockCategories = document.querySelector(".categories_products_block");
 const productsBlock = document.querySelector(".products_block");
 const createCategoriesBtn = document.querySelector("#create_categories_btn")
 const createProductsBtn = document.querySelector("#create_products_btn")
@@ -12,6 +13,8 @@ const loadData = async () => {
 
     categoriesBlock.innerHTML = "";
     productsBlock.innerHTML = "";
+    productsBlockCategories.innerHTML = "";
+
 
     for (const c of categories) {
         categoriesBlock.innerHTML += `
@@ -21,13 +24,22 @@ const loadData = async () => {
             </p>
         `;
     }
+    for (const p of categories) {
+        
+        productsBlockCategories.innerHTML += `
+        
+       <input type="checkbox"> <p class="checkbox">${p.name}</p>
+            
+        `;
+    }
 
     for (const p of products) {
         
         productsBlock.innerHTML += `
             <p>
                 ${p.name} <br>
-                ${p.categoryId} <br>
+                ${p.price} <br>
+                
                 <button onclick="deleteProducts(${p.id})">Delete</button>
             </p>
         `;
@@ -56,10 +68,13 @@ createCategoriesBtn.addEventListener("click", () => {
 
 createProductsBtn.addEventListener("click", () => {
     const newProductsName = document.querySelector("#new_products_name").value;
-    const newProductsCategory = document.querySelector("#new_products_category").value;
+    const newProductsPrice = document.querySelector("#new_products_price").value;
+    const checkboxCategory = document.querySelector(".checkbox");
+    
     const payload = {
         name: newProductsName,
-        categoryId: newProductsCategory,
+        price: newProductsPrice,
+        categoryId: checkboxCategory.textContent,
     };
     fetch(BASE_URL + "/products", {
         headers: {
@@ -83,3 +98,20 @@ const deleteProducts = id => {
         .then(() => loadData())
         .catch(() => alert("products delete error"));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
